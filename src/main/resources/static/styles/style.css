@@ -1,0 +1,12 @@
+body {
+    background-color: #add8e6;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 500%;
+}
+
+input[type=text] {
+  width: 5%;
+}
