@@ -37,4 +37,10 @@ public class SimpleWebCalcController {
 
         return "add";
     }
+
+    @PostMapping("/reset")
+    public String resetCalc(HttpSession session){
+        session.removeAttribute("total");
+        return "redirect:/add";
+    }
 }
