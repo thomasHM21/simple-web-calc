@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class SimpleWebCalcController {
@@ -30,10 +32,15 @@ public class SimpleWebCalcController {
     @PostMapping("/add")
     public String level2post(HttpSession session, @RequestParam Integer number) {
         Integer total = (Integer) session.getAttribute("total");
+        List<Integer> numbers = (List<Integer>)session.getAttribute("numbers");
         if (total == null) {
             total = number;
+            numbers = new ArrayList<>();
+
         } else total = total + number;
+        numbers.add(number);
         session.setAttribute("total", total);
+        session.setAttribute("numbers",numbers);
 
         return "add";
     }
