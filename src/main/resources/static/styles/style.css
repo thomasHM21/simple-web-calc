@@ -4,7 +4,10 @@ body {
 }
 
 h1 {
-    font-size: 500%;
+    height: 40vh;
+    margin-top:20px;
+    margin-bottom:20px;
+    font-size: 2000%;
 }
 
 input[type=text] {
